@@ -2,6 +2,6 @@
 
 use Test::More tests => 1;
 
-BEGIN { use_ok '' }
+BEGIN { use_ok 'MooseX::Types::Tied' }
 
-diag("Testing MooseX-Types-Tied $Dist::Zilla::Plugin::lib/MooseX/Types/Tied.pm::VERSION, Perl $], $^X");
+diag("Testing MooseX-Types-Tied $MooseX::Types::Tied::VERSION, Perl $], $^X");
