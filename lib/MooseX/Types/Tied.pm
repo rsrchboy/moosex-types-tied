@@ -69,4 +69,6 @@ Basetype: HashRef
 
 =head2 TiedHandle
 
+Basetype: FileHandle
+
 =cut
