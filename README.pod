@@ -1,0 +1,55 @@
+=pod
+
+=head1 NAME
+
+MooseX::Types::Tied - Basic tied Moose types library
+
+=head1 VERSION
+
+version 0.001
+
+=head1 SYNOPSIS
+
+    use Moose;
+    use MooseX::Types::Tied ':all';
+
+    has tied_array => (is => 'ro', isa => TiedArray);
+
+    # etc...
+
+=head1 DESCRIPTION
+
+This is a collection of basic L<Moose> types for tied references.  The package
+behaves as you'd expect a L<MooseX::Types> library to act: either specify the
+types you want imported explicitly or use the ':all' catchall.
+
+=head1 TYPES
+
+=head2 Tied
+
+Basetype: Ref (to Scalar)
+
+=head2 TiedArray
+
+Basetype: ArrayRef
+
+=head2 TiedHash
+
+Basetype: HashRef
+
+=head2 TiedHandle
+
+Basetype: FileHandle
+
+=head1 AUTHOR
+
+Chris Weyl <cweyl@alumni.drew.edu>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2011 by Chris Weyl.
+
+This is free software, licensed under:
+
+  The GNU Lesser General Public License, Version 2.1, February 1999
+
