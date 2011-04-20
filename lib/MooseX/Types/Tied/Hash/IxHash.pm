@@ -21,9 +21,9 @@ subtype IxHash,
 
 coerce IxHash,
     from HashRef,
-    via { tie my $x, 'Tie::IxHash', %{$_}; $x },
+    via { tie my %x, 'Tie::IxHash', %{$_}; \%x },
     from ArrayRef,
-    via { tie my $x, 'Tie::IxHash', @{$_}; $x },
+    via { tie my %x, 'Tie::IxHash', @{$_}; \%x },
     ;
 
 1;

@@ -12,7 +12,9 @@ use Test::Exception;
     use Moose;
     use MooseX::Types::Tied::Hash::IxHash ':all';
 
-    has ixhash => (is =>'rw', isa => IxHash);
+    has ixhash   => (is =>'rw', isa => IxHash);
+    has coercing => (is =>'rw', isa => IxHash, coerce => 1);
+
 }
 
 {
@@ -27,8 +29,14 @@ my $foo = TestClass->new();
 tie my %hash,   'Test::Tie::Hash';
 tie my %ixhash, 'Tie::IxHash';
 
-dies_ok  { $foo->tiedhash(\%hash) } 'IxHash NOK';
-dies_ok  { $foo->tiedhash({}) }     'IxHash NOK';
+dies_ok  { $foo->ixhash(\%hash)   } 'IxHash NOK';
+dies_ok  { $foo->ixhash({})       }     'IxHash NOK';
 lives_ok { $foo->ixhash(\%ixhash) } 'IxHash OK';
+
+# coercions
+lives_ok { $foo->coercing({ one => 1 }) } 'Coerces from hashref';
+lives_ok { $foo->coercing([ one => 1 ]) } 'Coerces from arrayref';
+
+ok(defined tied %{ $foo->coercing }, 'coerced value is tied');
 
 done_testing;
