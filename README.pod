@@ -6,7 +6,7 @@ MooseX::Types::Tied - Basic tied Moose types library
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
