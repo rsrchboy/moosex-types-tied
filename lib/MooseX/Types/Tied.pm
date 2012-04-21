@@ -38,6 +38,8 @@ subtype TiedHandle,
 
 __END__
 
+=for stopwords TiedArray TiedHash TiedHandle
+
 =head1 SYNOPSIS
 
     use Moose;
@@ -57,18 +59,18 @@ types you want imported explicitly or use the ':all' catchall.
 
 =head2 Tied
 
-Basetype: Ref (to Scalar)
+Base type: Ref (to Scalar)
 
 =head2 TiedArray
 
-Basetype: ArrayRef
+Base type: ArrayRef
 
 =head2 TiedHash
 
-Basetype: HashRef
+Base type: HashRef
 
 =head2 TiedHandle
 
-Basetype: FileHandle
+Base type: FileHandle
 
 =cut

@@ -28,6 +28,8 @@ coerce IxHash,
 
 __END__
 
+=for stopwords TiedArray TiedHash TiedHandle IxHash
+
 =head1 SYNOPSIS
 
     use Moose;
@@ -39,7 +41,7 @@ __END__
 
 =head1 DESCRIPTION
 
-This is a collection of basic L<Moose> types and coercions for L<Tie::IxHash>
+This is a collection of L<Moose> types and coercion settings for L<Tie::IxHash>
 tied hashes.
 
 The package behaves as you'd expect a L<MooseX::Types> library to act: either
@@ -49,7 +51,7 @@ specify the types you want imported explicitly or use the ':all' catchall.
 
 =head2 IxHash
 
-Basetype: TiedHash
+Base type: TiedHash
 
 This type coerces from ArrayRef.  As of 0.004 we no longer coerce from
 HashRef, as that lead to 1) annoyingly easy to miss errors involving expecting
