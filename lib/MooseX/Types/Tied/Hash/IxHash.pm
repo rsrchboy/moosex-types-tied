@@ -20,8 +20,6 @@ subtype IxHash,
     ;
 
 coerce IxHash,
-    from HashRef,
-    via { tie my %x, 'Tie::IxHash', %{$_}; \%x },
     from ArrayRef,
     via { tie my %x, 'Tie::IxHash', @{$_}; \%x },
     ;
@@ -53,6 +51,15 @@ specify the types you want imported explicitly or use the ':all' catchall.
 
 Basetype: TiedHash
 
-This type coerces from HashRef and ArrayRef.
+This type coerces from ArrayRef.  As of 0.004 we no longer coerce from
+HashRef, as that lead to 1) annoyingly easy to miss errors involving expecting
+C<$thing->attribute( { a => 1, b => 2, ... } )> to result in proper ordering;
+and 2) the Hash native trait appearing to work normally but instead silently
+destroying the preserved order (during certain write operations).
+
+=head1 WARNING!
+
+This type is not compatible with the write operations allowed by the Hash
+Moose native attribute trait.
 
 =cut

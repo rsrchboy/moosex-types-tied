@@ -27,7 +27,7 @@ use Test::Exception;
 my $foo = TestClass->new();
 
 # note arrayref
-$foo->ixhash([ one => 'first', two => 'second', three => 'third' ]);
+$foo->ixhash( [ one => 'first', two => 'second', three => 'third' ] );
 
 is_deeply(
     [ $foo->h_keys        ],
@@ -44,8 +44,8 @@ is_deeply(
 TODO: {
     local $TODO = 'Moose Hash native trait known to harmful to tied structs';
 
-    $foo->h_del('two');
-    $foo->h_set(four => 'fourth');
+    lives_ok { $foo->h_del('two')            } 'h_del(2) lives';
+    lives_ok { $foo->h_set(four => 'fourth') } 'h_set(...) lives';
 
     is_deeply(
         [ $foo->h_keys         ],
