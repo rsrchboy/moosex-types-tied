@@ -1,10 +1,13 @@
+[![Build Status](https://travis-ci.org/RsrchBoy/moosex-types-tied.svg?branch=master)](https://travis-ci.org/RsrchBoy/moosex-types-tied)
+[![Kwalitee status](http://cpants.cpanauthors.org/dist/MooseX-Types-Tied.png)](http://cpants.charsbar.org/dist/overview/MooseX-Types-Tied)
+
 # NAME
 
 MooseX::Types::Tied - Basic tied Moose types library
 
 # VERSION
 
-This document describes version 0.004 of MooseX::Types::Tied - released April 11, 2015 as part of MooseX-Types-Tied.
+This document describes version 0.004 of MooseX::Types::Tied - released April 24, 2015 as part of MooseX-Types-Tied.
 
 # SYNOPSIS
 
